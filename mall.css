@@ -1,0 +1,34 @@
+* {
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+#wrapper {
+	margin: 50px auto;
+	border: 1px black solid;
+	width: 1000px;
+}
+
+#header {
+	line-height: 100px;
+}
+
+#menu {
+	line-height: 40px;
+	margin-left: 40px;
+}
+#content {
+	margin: 10px;
+}
+table.thumbs {
+	width: 800px;
+	border: 5px solid fuchsia;
+}
+
+td.thumbs_td {
+	width: 400px;
+}
+textarea {
+	border: 1px solid black;
+}
