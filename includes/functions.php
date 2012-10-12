@@ -2,7 +2,7 @@
 	function checkFile($filename) {
 		$allowedFormats = array(".jpg", ".png", ".gif"); 
 		//tillåtna format på filerna som laddas upp
-		$numberOfChars = strlen($name);
+		$numberOfChars = strlen($filename);
 		
 		$fileformat = strtolower(substr($filename, $numberOfChars-4));
 		

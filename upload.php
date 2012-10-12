@@ -1,8 +1,7 @@
 <?php
-	
+	require_once('includes/conn.php');
 	if (isset($_FILES['filename'])) {
 		require_once('includes/functions.php');
-		require_once('includes/conn.php');
 		
 		$name = $_FILES['filename']['name'];
 		if (checkFile($name)) {
@@ -13,18 +12,18 @@
 			$imageDescription = $_POST['description'];
 			if (move_uploaded_file($_FILES['filename']['tmp_name'],("images/".$filename))) {
 				$token = "Du laddade upp en fil";
-				$conn = mysqli_connect($hostname, $username, $password, $database);
+/*				$conn = mysqli_connect($hostname, $username, $password, $database);
 				if (mysqli_connect_errno()) {
 					echo "Fel: ".mysqli_connect_errno();
 				}
-				
-			}
+				$query = "insert "
+			}*/
 		}
 		else {
 			$token = "Du försökte ladda upp en otillåten filtyp";
 		}
 	}
-
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,9 +39,26 @@
 			
 			<div id="content">
 				<form action="upload.php" method="post" enctype="multipart/form-data">
-				<label for="filename">Fil att ladda upp</label><input type="file" name="filename"><br>
+				<label for="filename">Fil att ladda upp</label><br><input type="file" name="filename"><br>
 				<label for="description">Beskrivning av bilden</label><br>
 				<textarea name="description"></textarea>
+				<br>
+				<?php
+					echo '<select name="category">';
+						$conn = mysqli_connect($hostname, $username, $password, $database);
+						if (mysqli_connect_errno()) {
+							echo "Fel: ".mysqli_connect_errno();
+						}
+						$query = "select categoryID, categoryName from categories";
+						$result = mysqli_query($conn, $query);
+						$count = mysqli_num_rows($result);
+						if ($count > 0) {
+							while ($row = myslqi_fetch_assoc($result)) {
+								echo '<option value="'.$row['categoryID'].'">'.$row['categoryName'].'</option>';
+							}
+						}
+						echo '</select>';
+				?>
 				<br>
 				<input type="submit" value="Ladda upp bilden">
 				</form>
