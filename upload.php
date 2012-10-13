@@ -5,26 +5,31 @@
 		
 		$name = $_FILES['filename']['name'];
 		if (checkFile($name)) {
-			$thumbname = createThumb();
-			$watermarkname = watermarkImage();
+			$thumbName = createThumb();			//Creates thumbnail and stores the name of the file in $thumbName
+			$watermarkName = watermarkImage();	//Creates watermarked image and stores the name of the file in $watermarkName
 			$filename = $_FILES['filename']['name'];
 			$image = $_FILES['filename']['tmp_name'];
 			$imageDescription = $_POST['description'];
 			$categoryID = $_POST['category'];
 			if (move_uploaded_file($_FILES['filename']['tmp_name'],("images/".$filename))) {
 				$token = "Du laddade upp en fil";
-/*				$conn = mysqli_connect($hostname, $username, $password, $database);
+				$conn = mysqli_connect($hostname, $username, $password, $database);
 				if (mysqli_connect_errno()) {
 					echo "Fel: ".mysqli_connect_errno();
 				}
-				$query = "insert into images_v1 (imageID, imageThumbLink, imageLink, imageWatermarkLink, imageDescription, categoryID)  values (null, ";
-			}*/
+				$imageLink = "images/".$filename;
+				$imageThumbLink = "thumbs/".$thumbName;
+				$imageWatermarkLink = "watermarked/".$watermarkName;
+				$query = "insert into images_v1 (imageID, imageThumbLink, imageLink, imageWatermarkLink, imageDescription, categoryID)  values (null, '$imageThumbLink', '$imageLink', '$imageWatermarkLink', '$imageDescription', '$categoryID')";
+				mysqli_query($conn, $query);
+				$token = $token." och all info sparades i databasen";
+				mysqli_close($conn);
+			}
 		}
 		else {
 			$token = "Du försökte ladda upp en otillåten filtyp";
 		}
 	}
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -57,6 +62,7 @@
 					}
 					
 					echo '</select>';
+					mysqli_close($conn);
 				?>
 				<br>
 				<input type="submit" value="Ladda upp bilden">
