@@ -12,6 +12,7 @@
 
 #header {
 	line-height: 100px;
+	text-align: center;
 }
 
 #menu {
@@ -20,6 +21,14 @@
 }
 #content {
 	margin: 10px;
+}
+#footer {
+	text-align: center;
+	font-variant: small-caps;
+	line-height: 50px;
+}
+#footer p {
+	font-size: 10px;
 }
 table.thumbs {
 	width: 980px;

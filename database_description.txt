@@ -1,0 +1,15 @@
+database fotosite
+
+table categories
+----------------
+categoryID (int ai)
+categoryName (Varchar 100)
+
+table images_v1
+---------------
+imageID (int ai)
+imageThumbLink (Varchar 100)
+imageLink (Varchar 100)
+imageWatermarkLink (Varchar 100)
+imageDescription (text)
+categoryID (int)
