@@ -10,13 +10,14 @@
 			$filename = $_FILES['filename']['name'];
 			$image = $_FILES['filename']['tmp_name'];
 			$imageDescription = $_POST['description'];
+			$categoryID = $_POST['category'];
 			if (move_uploaded_file($_FILES['filename']['tmp_name'],("images/".$filename))) {
 				$token = "Du laddade upp en fil";
 /*				$conn = mysqli_connect($hostname, $username, $password, $database);
 				if (mysqli_connect_errno()) {
 					echo "Fel: ".mysqli_connect_errno();
 				}
-				$query = "insert "
+				$query = "insert into images_v1 (imageID, imageThumbLink, imageLink, imageWatermarkLink, imageDescription, categoryID)  values (null, ";
 			}*/
 		}
 		else {
@@ -45,19 +46,17 @@
 				<br>
 				<?php
 					echo '<select name="category">';
-						$conn = mysqli_connect($hostname, $username, $password, $database);
-						if (mysqli_connect_errno()) {
-							echo "Fel: ".mysqli_connect_errno();
-						}
-						$query = "select categoryID, categoryName from categories";
-						$result = mysqli_query($conn, $query);
-						$count = mysqli_num_rows($result);
-						if ($count > 0) {
-							while ($row = myslqi_fetch_assoc($result)) {
-								echo '<option value="'.$row['categoryID'].'">'.$row['categoryName'].'</option>';
-							}
-						}
-						echo '</select>';
+					$conn = mysqli_connect($hostname, $username, $password, $database);
+					if (mysqli_connect_errno()) {
+						echo "Fel: ".mysqli_connect_errno();
+					}
+					$query = "select categoryID, categoryName from categories";
+					$result = mysqli_query($conn, $query);
+					while ($row = mysqli_fetch_assoc($result)) {
+						echo '<option value="'.$row['categoryID'].'">'.$row['categoryName'].'</option>';
+					}
+					
+					echo '</select>';
 				?>
 				<br>
 				<input type="submit" value="Ladda upp bilden">
