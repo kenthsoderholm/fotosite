@@ -42,3 +42,6 @@ td.thumbs_td {
 textarea {
 	border: 1px solid black;
 }
+img.display {
+	max-width: 100%;
+}

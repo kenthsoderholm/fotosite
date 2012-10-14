@@ -9,7 +9,6 @@
 			$watermarkName = watermarkImage();	//Creates watermarked image and stores the name of the file in $watermarkName
 			$filename = $_FILES['filename']['name'];
 			$image = $_FILES['filename']['tmp_name'];
-			$imageDescription = $_POST['description'];
 			$categoryID = $_POST['category'];
 			if (move_uploaded_file($_FILES['filename']['tmp_name'],("images/".$filename))) {
 				$token = "Du laddade upp en fil";
@@ -17,6 +16,7 @@
 				if (mysqli_connect_errno()) {
 					echo "Fel: ".mysqli_connect_errno();
 				}
+				$imageDescription = mysqli_escape_string(htmlentities($_POST['description'], EN_QUOTES, "UTF-8"));
 				$imageLink = "images/".$filename;
 				$imageThumbLink = "thumbs/".$thumbName;
 				$imageWatermarkLink = "watermarked/".$watermarkName;
