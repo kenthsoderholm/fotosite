@@ -35,7 +35,7 @@
 						$imageWatermarkLink = $row['imageWatermarkLink'];
 						$imageDescription = $row['imageDescription'];
 						echo '
-							<p><img class="display" src="'.$imageLink.'" alt="'.$imageDescription.'" title="'.$imageDescription.'"><br>För inloggade visas denna.<br>klicka <a href="'.$imageLink.'">här</a></p> <br>
+							<p><img class="display" src="'.$imageLink.'" alt="'.$imageDescription.'" title="'.$imageDescription.'"><br>För inloggade visas denna.<br>klicka <a href="'.$imageLink.'">här</a> för full storlek.</p> <br>
 							<p><img class="display" src="'.$imageWatermarkLink.'" alt="'.$imageDescription.'" title="'.$imageDescription.'"><br>För andra visas denna.<br>klicka <a href="'.$imageWatermarkLink.'">här</a> för full storlek.</p>
 						';
 					} //Now it shows both watermarked and original image, will change this after adding login

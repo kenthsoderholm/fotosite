@@ -16,7 +16,10 @@
 	</head>
 	<body>
 		<div id="wrapper">
-			<div id="header"><h1>Photos by Kenth</h1></div>
+			<div id="header">
+				<h1>Photos by Kenth</h1>	
+			</div>
+			
 			<div id="menu"><a href="backend.php">Backend</a></div>
 			
 			<div id="content">

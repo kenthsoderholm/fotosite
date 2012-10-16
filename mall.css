@@ -45,3 +45,7 @@ textarea {
 img.display {
 	max-width: 100%;
 }
+#state {
+	float: right;
+	width: 200px;
+}
