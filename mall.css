@@ -7,7 +7,7 @@
 #wrapper {
 	margin: 50px auto;
 	border: 1px black solid;
-	width: 1000px;
+	width: 75%;
 }
 
 #header {
@@ -25,28 +25,26 @@
 }
 #content {
 	margin: 10px;
+	padding: 20px 0px;
 }
 #footer {
 	text-align: center;
 	font-variant: small-caps;
-	line-height: 50px;
+	line-height: 70px;
+	clear: both;
 }
 #footer p {
-	font-size: 10px;
+	font-size: 12px;
 }
-table.thumbs {
-	width: 980px;
-	border: 3px solid fuchsia;
-}
-
-td.thumbs_td {
-	width: 394px;
+.thumbs_td {
+	width: 50%;
 	text-align: center;
+	float: left;
 }
 textarea {
 	border: 1px solid black;
 }
-img.display {
+img {
 	max-width: 100%;
 }
 #state {

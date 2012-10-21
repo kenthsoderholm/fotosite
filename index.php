@@ -32,33 +32,17 @@
 					$result = mysqli_query($conn, $query);
 					$count_rows = mysqli_num_rows($result);
 					if ($count_rows > 0) {
-						echo '<table class="thumbs">';
 						$counter = 0;
 						while ($row = mysqli_fetch_assoc($result)) {
-							$counter++;
 							$imageDescription = $row['imageDescription'];
-							if ($counter%2 == 1) {
 								echo '
-									<tr>
-										<td class="thumbs_td">
+										<div class="thumbs_td">
 											<a href="single.php?id='.$row['imageID'].'">
 												<img src="'.$row['imageThumbLink'].'" title="'.$imageDescription.'" alt="'.$imageDescription.'">
 											</a>
-										</td>
+										</div>
 								';
 							}
-							else {
-								echo '
-										<td class="thumbs_td">
-											<a href="single.php?id='.$row['imageID'].'">
-												<img src="'.$row['imageThumbLink'].'" title="'.$imageDescription.'" alt="'.$imageDescription.'">
-											</a>
-										</td>
-									</tr>
-								';
-							}
-						}
-						echo '</table>';
 					}
 					else {
 						echo "<p>Inga bilder i databasen</p>";
