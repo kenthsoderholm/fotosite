@@ -1,6 +1,6 @@
 <?php
 	function checkFile($filename) {
-		$allowedFormats = array(".jpg", ".png", ".gif");	//Array of allowed fileformats
+		$allowedFormats = array(".jpg", ".png", ".gif");	//Array of allowed fileformats, jpeg is the only working one in this version.
 		$numberOfChars = strlen($filename);
 		
 		$fileFormat = strtolower(substr($filename, $numberOfChars-4));

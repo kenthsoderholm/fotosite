@@ -1,4 +1,8 @@
 <?php
+	session_start();
+	if (!isset($_SESSION['loggedIn'])) {
+		header('location: index.php');
+	}
 	require_once('includes/conn.php');
 	if (isset($_FILES['filename'])) {
 		require_once('includes/functions.php');
@@ -16,13 +20,16 @@
 				if (mysqli_connect_errno()) {
 					echo "Fel: ".mysqli_connect_errno();
 				}
-				$imageDescription = mysqli_escape_string(htmlentities($_POST['description'], EN_QUOTES, "UTF-8"));
+
+				$imageDescription = mysqli_escape_string($conn, htmlentities($_POST['description'], ENT_QUOTES, "UTF-8"));
+
 				$imageLink = "images/".$filename;
 				$imageThumbLink = "thumbs/".$thumbName;
 				$imageWatermarkLink = "watermarked/".$watermarkName;
 				$query = "insert into images_v1 (imageID, imageThumbLink, imageLink, imageWatermarkLink, imageDescription, categoryID)  values (null, '$imageThumbLink', '$imageLink', '$imageWatermarkLink', '$imageDescription', '$categoryID')";
 				mysqli_query($conn, $query);
-				$token = $token." och all info sparades i databasen";
+				$token = $token." och all info sparades i databasen<br>".$imageDescription;
+				
 				mysqli_close($conn);
 			}
 		}
@@ -40,7 +47,9 @@
 	</head>
 	<body>
 		<div id="wrapper">
-			<div id="header"></div>
+			<?php
+				require_once('includes/header.php');
+			?>
 			<div id="menu"><a href="index.php">Startsidan</a> | <a href="backend.php">Backend</a></div>
 			
 			<div id="content">

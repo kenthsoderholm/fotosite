@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	require_once('includes/conn.php');
 	if (!isset($_GET['id']) || $_GET['id'] <= 0) {
 		header('location: index.php');
@@ -17,7 +18,10 @@
 	
 	<body>
 		<div id="wrapper">
-			<div id="header"><h1>Fotosite by Kenth</h1></div>
+			<?php
+				require_once('includes/header.php');
+			?>
+			
 			<div id="menu">
 				<a href="index.php">Startsidan</a> | <a href="backend.php">Backend</a>
 			</div>
@@ -34,11 +38,14 @@
 						$imageLink = $row['imageLink'];
 						$imageWatermarkLink = $row['imageWatermarkLink'];
 						$imageDescription = $row['imageDescription'];
-						echo '
-							<p><img class="display" src="'.$imageLink.'" alt="'.$imageDescription.'" title="'.$imageDescription.'"><br>För inloggade visas denna.<br>klicka <a href="'.$imageLink.'">här</a> för full storlek.</p> <br>
-							<p><img class="display" src="'.$imageWatermarkLink.'" alt="'.$imageDescription.'" title="'.$imageDescription.'"><br>För andra visas denna.<br>klicka <a href="'.$imageWatermarkLink.'">här</a> för full storlek.</p>
-						';
-					} //Now it shows both watermarked and original image, will change this after adding login
+						if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
+						echo '<p><img class="display" src="'.$imageLink.'" alt="'.$imageDescription.'" title="'.$imageDescription.'"><br>För inloggade visas denna.<br>klicka <a href="'.$imageLink.'">här</a> för full storlek.</p> <br>';
+						}
+						else {
+							echo '<p><img class="display" src="'.$imageWatermarkLink.'" alt="'.$imageDescription.'" title="'.$imageDescription.'"><br>För andra visas denna.<br>klicka <a href="'.$imageWatermarkLink.'">här</a> för full storlek.</p>';
+						}
+						
+					}
 				?>
 			</div>
 			

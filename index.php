@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	require_once('includes/conn.php');
 	if (isset($_GET['page']) && $_GET['page'] != 0) {
 		$start = $_GET['page']*10;
@@ -16,10 +17,9 @@
 	</head>
 	<body>
 		<div id="wrapper">
-			<div id="header">
-				<h1>Photos by Kenth</h1>	
-			</div>
-			
+			<?php 
+				require_once('includes/header.php');
+			?>			
 			<div id="menu"><a href="backend.php">Backend</a></div>
 			
 			<div id="content">
@@ -33,9 +33,11 @@
 					$count_rows = mysqli_num_rows($result);
 					if ($count_rows > 0) {
 						echo '<table class="thumbs">';
+						$counter = 0;
 						while ($row = mysqli_fetch_assoc($result)) {
+							$counter++;
 							$imageDescription = $row['imageDescription'];
-							if ($row['imageID']%2 == 1) {
+							if ($counter%2 == 1) {
 								echo '
 									<tr>
 										<td class="thumbs_td">

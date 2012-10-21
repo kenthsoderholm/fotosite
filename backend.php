@@ -1,3 +1,9 @@
+<?php
+	session_start();
+	if (!isset($_SESSION['loggedIn'])) {
+		header('location: index.php');
+	}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,7 +13,9 @@
 	</head>
 	<body>
 		<div id="wrapper">
-			<div id="header"></div>
+			<?php 
+				require_once('includes/header.php');
+			?>
 			<div id="menu"><a href="index.php">Startsidan</a> | <a href="upload.php">Ladda upp bilder</a></div>
 			
 			<div id="content">
