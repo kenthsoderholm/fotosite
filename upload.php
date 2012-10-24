@@ -53,6 +53,7 @@
 			<div id="menu"><a href="index.php">Startsidan</a> | <a href="backend.php">Backend</a></div>
 			
 			<div id="content">
+				<h2>Stöder just nu bara bilder i formatet JPEG</h2>
 				<form action="upload.php" method="post" enctype="multipart/form-data">
 				<label for="filename">Fil att ladda upp</label><br><input type="file" name="filename"><br>
 				<label for="description">Beskrivning av bilden</label><br>

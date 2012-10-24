@@ -47,4 +47,13 @@
 		imagedestroy($image);
 		return "wm_".$_FILES['filename']['name']; //Returns name of watermarked file
 	}
+	
+	function numberOfImages() {
+		global $conn;
+		$query ="select count(imageID) as antal from images_v1";
+		$result = mysqli_query($conn, $query);
+		$row = mysqli_fetch_assoc($result);
+		return $row['antal'];
+	}
+
 ?>

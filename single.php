@@ -20,12 +20,9 @@
 		<div id="wrapper">
 			<?php
 				require_once('includes/header.php');
+				require_once('includes/menu.php');
 			?>
-			
-			<div id="menu">
-				<a href="index.php">Startsidan</a> | <a href="backend.php">Backend</a>
-			</div>
-			
+						
 			<div id="content">
 				<?php
 					$conn = mysqli_connect($hostname, $username, $password, $database);
@@ -39,10 +36,10 @@
 						$imageWatermarkLink = $row['imageWatermarkLink'];
 						$imageDescription = $row['imageDescription'];
 						if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
-						echo '<p><img class="display" src="'.$imageLink.'" alt="'.$imageDescription.'" title="'.$imageDescription.'"><br>För inloggade visas denna.<br>klicka <a href="'.$imageLink.'">här</a> för full storlek.</p> <br>';
+						echo '<p><img class="display" src="'.$imageLink.'" alt="'.$imageDescription.'" title="'.$imageDescription.'"><br>För inloggade visas denna.<br>klicka <a href="'.$imageLink.'">här</a> för full storlek.</p>';
 						}
 						else {
-							echo '<p><img class="display" src="'.$imageWatermarkLink.'" alt="'.$imageDescription.'" title="'.$imageDescription.'"><br>För andra visas denna.<br>klicka <a href="'.$imageWatermarkLink.'">här</a> för full storlek.</p>';
+							echo '<p><img class="display" src="'.$imageWatermarkLink.'" alt="'.$imageDescription.'" title="'.$imageDescription.'"></p>';
 						}
 						
 					}

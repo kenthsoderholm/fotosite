@@ -3,3 +3,8 @@
 
 #TTFs
 *.ttf
+includes/liveConn.php
+
+responsivMall.css
+
+mobileRedirect.php

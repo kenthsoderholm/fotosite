@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if (!isset($_SESSION['loggedIn'])) {
+	if (!isset($_SESSION['loggedIn']) || $_SESSION['level']== "viewer") {
 		header('location: index.php');
 	}
 ?>

@@ -3,13 +3,23 @@ database fotosite
 table categories
 ----------------
 categoryID (int ai)
-categoryName (Varchar 100)
+categoryName (varchar 100)
 
 table images_v1
 ---------------
 imageID (int ai)
-imageThumbLink (Varchar 100)
-imageLink (Varchar 100)
-imageWatermarkLink (Varchar 100)
+imageThumbLink (varchar 100)
+imageLink (varchar 100)
+imageWatermarkLink (varchar 100)
 imageDescription (text)
 categoryID (int)
+
+table users
+-----------
+userID (int ai)
+username (varchar 100)
+pass (char 128)
+email (varchar 100)
+fname (varchar 100)
+lname (varchar 100)
+level (enum 'viewer', 'uploader')
