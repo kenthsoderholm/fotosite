@@ -15,16 +15,16 @@
 		<div id="wrapper">
 			<?php 
 				require_once('includes/header.php');
+				require_once('includes/menu.php');
 			?>
-			<div id="menu"><a href="index.php">Startsidan</a> | <a href="upload.php">Ladda upp bilder</a></div>
 			
 			<div id="content">
-				<?php
-				
-				?>
+				<p>
+					<a href="upload.php">Ladda upp bilder</a>
+				</p>
 			</div>
 			
-			<div id="footer"></div>
+			<div id="footer"><p>Kenth Söderholm &copy;</p></div>
 		</div>
 	</body>
 </html>

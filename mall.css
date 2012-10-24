@@ -8,7 +8,7 @@
 		background: #000;
 	}
 	#wrapper {
-		margin: 50px auto;
+		margin: 10px auto;
 		background: #CCC;
 		width: 90%;
 	}
@@ -20,12 +20,23 @@
 	#header h1 a {
 		text-decoration: none;
 		color: #555;
+		font-size: 20px;
 	}
 	#menu {
-		line-height: 40px;
+		line-height: 20px;
 		margin-left: 40px;
 	}
+	#menu a {
+		display: block;
+		float: left;
+		border: 1px #000 solid;
+		background: #FFF;
+		border-radius: 5px;
+		padding: 5px;
+		margin-left: 20px;
+	}
 	#content {
+		clear: both;
 		margin: 10px;
 		padding: 20px 0px 0px;
 	}
@@ -40,9 +51,9 @@
 	}
 	
 	.thumbs_td {
-		width: 50%;
+		width: 100%;
 		text-align: center;
-		float: left;
+/*		float: left; */
 	}
 	#clearOnIndex {
 		clear:both;
@@ -87,7 +98,7 @@
 	#wrapper {
 		margin: 50px auto;
 		background: #CCC;
-		width: 80%;
+		width: 85%;
 	}
 	
 	#header {
@@ -98,10 +109,16 @@
 		text-decoration: none;
 		color: #555;
 		margin-left: 150px;
+		font-size: 20px;
 	}
-	#menu {
-		line-height: 40px;
-		margin-left: 40px;
+	#menu a {
+		display: block;
+		float: left;
+		border: 1px #000 solid;
+		background: #FFF;
+		border-radius: 7px;
+		padding: 5px;
+		margin-left: 20px;
 	}
 	#content {
 		margin: 10px;
@@ -110,7 +127,7 @@
 	#footer {
 		text-align: center;
 		font-variant: small-caps;
-		line-height: 70px;
+		line-height: 60px;
 		clear: both;
 	}
 	#footer p {
@@ -118,9 +135,11 @@
 	}
 	
 	.thumbs_td {
-		width: 50%;
+		width: 48%;
 		text-align: center;
 		float: left;
+		margin-left: 1%;
+		padding-bottom: 10px;
 	}
 	#clearOnIndex {
 		clear:both;
@@ -179,10 +198,7 @@
 		text-decoration: none;
 		color: #555;
 		margin-left: 150px;
-	}
-	#menu {
-		line-height: 40px;
-		margin-left: 40px;
+		font-size: 24px;
 	}
 	#content {
 		margin: 10px;
@@ -195,13 +211,14 @@
 		clear: both;
 	}
 	#footer p {
-		font-size: 12px;
+		font-size: 14px;
 	}
 	
 	.thumbs_td {
-		width: 50%;
+		width: 49%;
 		text-align: center;
 		float: left;
+		margin-left: 1%;
 	}
 	#clearOnIndex {
 		clear:both;
