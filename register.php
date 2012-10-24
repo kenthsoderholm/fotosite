@@ -5,25 +5,31 @@
 		if (mysqli_connect_errno()) {
 			echo "Fel inträffade: ".mysqli_connect_errno();
 		}
-
 		$uname = mysqli_real_escape_string($conn, $_POST['username']);
 		$uname = htmlspecialchars($uname);
-
-		$fname = htmlentities($_POST['fname'], ENT_QUOTES, "UTF-8");
-
-		$lname = htmlentities($_POST['lname'], ENT_QUOTES, "UTF-8");
-
-		$pass = $_POST['pass'];
-
-		$mail = stripslashes($_POST['mail']);
-
-		$salt = hash("sha256", time().$uname);
-		$saltedPass = hash("sha256", $salt.$pass);
-		$pass = $salt.$saltedPass;
-
-		$query = "insert into users (userID, username, password, fname, lname, email, level) values (null, '$uname', '$pass', '$fname', '$lname', '$mail', 'viewer')";
-		if (mysqli_query($conn, $query)) {
-			$token = '<h2>Du är numera registrerad. <a href="login.php">Logga in här</a></h2>';
+		$query = "select username from users where username = '$uname'";
+		$result = mysqli_query($conn, $query);
+		$rows = mysqli_num_rows($result);
+		if ($rows == 0) {
+			$fname = htmlentities($_POST['fname'], ENT_QUOTES, "UTF-8");
+	
+			$lname = htmlentities($_POST['lname'], ENT_QUOTES, "UTF-8");
+	
+			$pass = $_POST['pass'];
+	
+			$mail = stripslashes($_POST['mail']);
+	
+			$salt = hash("sha256", time().$uname);
+			$saltedPass = hash("sha256", $salt.$pass);
+			$pass = $salt.$saltedPass;
+	
+			$query = "insert into users (userID, username, password, fname, lname, email, level) values (null, '$uname', '$pass', '$fname', '$lname', '$mail', 'viewer')";
+			if (mysqli_query($conn, $query)) {
+				$token = '<h2>Du är numera registrerad. <a href="login.php">Logga in här</a></h2>';
+			}
+		}
+		else {
+			$token = "<h2>Det finns redan en användare med det användarnamnet.</h2>";
 		}
 		mysqli_close($conn);
 	}
