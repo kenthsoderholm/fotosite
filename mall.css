@@ -7,6 +7,10 @@
 	body {
 		background: #000;
 	}
+	hr {
+		border: 1px solid #000;
+		clear: both;
+	}
 	#wrapper {
 		margin: 10px auto;
 		background: #CCC;
@@ -87,10 +91,13 @@
 	#state p {
 		font-size: 10px;
 	}
-	.stricken {
-		text-decoration: line-through;
+	.leftFloat {
+		float: left;
+		margin: 5px 10px;
 	}
-
+	p.leftFloat {
+		min-width: 300px;
+	}
 /* Between 600px and 960px */
 @media screen and (min-width: 600px) {
 	* {
@@ -102,7 +109,7 @@
 		background: #333;
 	}
 	#wrapper {
-		margin: 50px auto;
+		margin: 30px auto;
 		background: #CCC;
 		width: 85%;
 	}
