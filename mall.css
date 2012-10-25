@@ -103,7 +103,7 @@
 		margin: 5px 10px;
 	}
 	p.leftFloat {
-		min-width: 300px;
+		min-width: 100px;
 	}
 /* Between 600px and 960px */
 @media screen and (min-width: 600px) {
@@ -190,8 +190,9 @@
 	#state p {
 		font-size: 12px;
 	}
-
-	
+	p.leftFloat {
+		min-width: 200px;
+	}
 }
 
 /* Screens greater than 960px */
