@@ -7,6 +7,9 @@
 	body {
 		background: #000;
 	}
+	a {
+		color: #777;
+	}
 	hr {
 		border: 1px solid #000;
 		clear: both;
@@ -15,6 +18,7 @@
 		margin: 10px auto;
 		background: #CCC;
 		width: 90%;
+		border-radius: 10px;
 	}
 	
 	#header {
@@ -38,6 +42,8 @@
 		border-radius: 5px;
 		padding: 5px;
 		margin-left: 20px;
+		min-width: 80px;
+		text-align: center;
 	}
 	#content {
 		clear: both;
@@ -81,6 +87,7 @@
 	}
 	img {
 		max-width: 100%;
+		border-radius: 10px;
 	}
 	#state {
 		float: right;

@@ -28,7 +28,7 @@
 				$imageWatermarkLink = "watermarked/".$watermarkName;
 				$query = "insert into images_v1 (imageID, imageThumbLink, imageLink, imageWatermarkLink, imageDescription, categoryID)  values (null, '$imageThumbLink', '$imageLink', '$imageWatermarkLink', '$imageDescription', '$categoryID')";
 				mysqli_query($conn, $query);
-				$token = $token." och all info sparades i databasen<br>".$imageDescription;
+				$token = $token." och all info sparades i databasen<br>";
 				
 				mysqli_close($conn);
 			}

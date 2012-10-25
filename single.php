@@ -36,7 +36,7 @@
 						$imageWatermarkLink = $row['imageWatermarkLink'];
 						$imageDescription = $row['imageDescription'];
 						if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
-						echo '<p><img class="display" src="'.$imageLink.'" alt="'.$imageDescription.'" title="'.$imageDescription.'"><br>För inloggade visas denna.<br>klicka <a href="'.$imageLink.'">här</a> för full storlek.</p>';
+						echo '<p><img class="display" src="'.$imageLink.'" alt="'.$imageDescription.'" title="'.$imageDescription.'"><br>klicka <a href="'.$imageLink.'" target="_blank">här</a> för full storlek (öppnas i ny flik).</p>';
 						}
 						else {
 							echo '<p><img class="display" src="'.$imageWatermarkLink.'" alt="'.$imageDescription.'" title="'.$imageDescription.'"></p>';

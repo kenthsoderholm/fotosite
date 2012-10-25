@@ -22,4 +22,48 @@ pass (char 128)
 email (varchar 100)
 fname (varchar 100)
 lname (varchar 100)
-level (enum 'viewer', 'uploader')
+level (enum 'viewer', 'uploader', 'supercop')
+
+SQL-import
+
+--
+-- Tabellstruktur `categories`
+--
+
+CREATE TABLE IF NOT EXISTS `categories` (
+  `categoryID` int(11) NOT NULL AUTO_INCREMENT,
+  `categoryName` varchar(100) NOT NULL,
+  PRIMARY KEY (`categoryID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Tabellstruktur `images_v1`
+--
+
+CREATE TABLE IF NOT EXISTS `images_v1` (
+  `imageID` int(11) NOT NULL AUTO_INCREMENT,
+  `imageThumbLink` varchar(100) NOT NULL,
+  `imageLink` varchar(100) NOT NULL,
+  `imageWatermarkLink` varchar(100) NOT NULL,
+  `imageDescription` text NOT NULL,
+  `categoryID` int(11) NOT NULL,
+  PRIMARY KEY (`imageID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `userID` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) NOT NULL,
+  `password` char(128) NOT NULL,
+  `fname` varchar(100) NOT NULL,
+  `lname` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `level` enum('viewer','uploader','supercop') NOT NULL,
+  PRIMARY KEY (`userID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+

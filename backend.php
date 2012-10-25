@@ -22,7 +22,8 @@
 				<p>
 					<a href="upload.php">Ladda upp bilder</a><br>
 					<a href="users.php">Befordra/Radera användare</a><br>
-					<span class="stricken"><a href="deleteImages.php">Radera bilder</a></span>
+					<a href="deleteImages.php">Radera bilder</a><br>
+					<a href="editAddCategories.php">Editera/Lägg till kategorier</a>
 				</p>
 			</div>
 			
