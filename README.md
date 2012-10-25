@@ -2,19 +2,14 @@
 
 An assignment for school. 
 
-Description (in swedish):
+Description:
 
-Uppgift – fotosajt
+A photosite where uploaders can upload pictures, 'the site' then creates a thumbnail and a watermarked version of the image and saves all images on server.
+Uploaders have rights to add categories (which are there but not implemented yet), upload images, and also delete images (for the moment any uploader can delete any image).
 
-Version ett
+Now version 0.1 is up and running.
+You can see it live at http://fotosite.kenthsoderholm.se
+The site may seem buggy, but this was a school project and we had to have a classmate that did something to the css via git.
+I will restore my old .css file after this weekend (today is oct 25 2012).
 
-Bygg en lösning från vilken man i en tänkt back-end kan ladda upp bilder. När man laddar upp en bild, så skapas det även en thumbnail av bilden.
-Bygg sedan en utvisningsmiljö för dina bilder, här ska alltså de skapade thumbnailsen visas ut, om man klickar på en thumbnail ska den stora bilden visas ut. Du kan sedan lägga till saker som att låta bilder tillhöra olika kategorier (så man t.e.x kan klicka på en länk för att enbart se skogsbilder), du kan använda dig av paginering vid utvisningen (visa 20 bilder i taget etc).
-
-Utbyggnad 1
-
-Lägg till så att de stora bilderna har ett vattenmärke, det räcker med en copyright-text nere i hörnet på bilden. Om du vill kan du skapa någon form av inloggning, och om man är inloggad så får man se den stora bilden utan vattenmärke
-
-Version 2
-
-Gör samma lösning som ovan, men de stora bilderna ska inte sparas i filsystemet, utan direkt i databasen (så att ingen kan komma åt dem via en direkt url)
+For future versions I will add more filetypes for upload. Just jpegs now.
