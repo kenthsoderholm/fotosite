@@ -49,8 +49,9 @@
 		<div id="wrapper">
 			<?php
 				require_once('includes/header.php');
+				require_once('includes/menu.php');
 			?>
-			<div id="menu"><a href="index.php">Startsidan</a> | <a href="backend.php">Backend</a></div>
+			
 			
 			<div id="content">
 				<h2>Stöder just nu bara bilder i formatet JPEG</h2>

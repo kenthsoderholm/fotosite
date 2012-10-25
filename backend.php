@@ -21,7 +21,11 @@
 			<div id="content">
 				<p>
 					<a href="upload.php">Ladda upp bilder</a><br>
-					<a href="users.php">Befordra/Radera användare</a><br>
+					<?php
+						if ($_SESSION['level'] == "uploader") {
+							echo '<a href="users.php">Befordra/Radera användare</a><br>';
+						}
+					?>
 					<a href="deleteImages.php">Radera bilder</a><br>
 					<a href="editAddCategories.php">Editera/Lägg till kategorier</a>
 				</p>
