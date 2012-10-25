@@ -55,7 +55,7 @@
 							}
 						echo '<div id="clearOnIndex"><p>Sidor: ';
 						if ($currentPage > 0) {
-							echo "bakåt ";
+							echo echo '<a href="index.php?currentPage='.$back.'">&lt;&lt;Bakåt</a> ';
 						}
 						$numPages = ceil($numberOfImages/10);
 						for ($i = 0; $i < $numPages; $i++) {
@@ -64,7 +64,7 @@
 
 						} 
 						if ($forward*10 < $numberOfImages) {
-							echo "framåt ";
+							echo echo '<a href="index.php?currentPage='.$forward.'">Framåt &gt;&gt;</a> ';
 						}
 						echo '</div>';
 					}
