@@ -4,35 +4,12 @@
 		padding:0;
 		border:0;
 	}
-
 	body {
 		background: #000;
 	}
-
-/* Med vänliga hälsningar, Linus */
-
-a:link, a:visited {
-	color: #777;
-	text-decoration: none;
-	border-bottom: 1px dashed #777;
-	-webkit-transition: all 0.3s ease-out;  /* Safari 3.2+, Chrome */
-	-moz-transition: all 0.3s ease-out;  /* Firefox 4-15 */
-	-o-transition: all 0.3s ease-out;  /* Opera 10.5–12.00 */
-    transition: all 0.3s ease-out;  /* Firefox 16+, Opera 12.50+ */
-    display:inline-block;
-}
-
-a:hover, a:active {
-	font-size: 50px !important;
-	font-family: helvetica, "sans serif";
-	color: fuchsia !important;
-	transform: rotate(360deg);
-	-webkit-transform: rotate(360deg); /* Safari and Chrome */
-	-moz-transform: rotate(360deg); /* Firefox */
-}
-
-
-
+	a {
+		color: #777;
+	}
 	hr {
 		border: 1px solid #000;
 		clear: both;
@@ -52,7 +29,6 @@ a:hover, a:active {
 		text-decoration: none;
 		color: #555;
 		font-size: 20px;
-		border: none;
 	}
 	#menu {
 		line-height: 20px;
@@ -112,6 +88,7 @@ a:hover, a:active {
 	img {
 		max-width: 100%;
 		border-radius: 10px;
+		height: auto;
 	}
 	#state {
 		float: right;
@@ -129,7 +106,6 @@ a:hover, a:active {
 	p.leftFloat {
 		min-width: 100px;
 	}
-
 /* Between 600px and 960px */
 @media screen and (min-width: 600px) {
 	* {
@@ -203,9 +179,6 @@ a:hover, a:active {
 	textarea {
 		border: 1px solid black;
 	}
-	img {
-		max-width: 100%;
-	}
 	#state {
 		float: right;
 		margin-top: 20px;
@@ -259,12 +232,16 @@ a:hover, a:active {
 	#footer p {
 		font-size: 14px;
 	}
-
+	
 	.thumbs_td {
 		width: 49%;
 		text-align: center;
 		float: left;
 		margin-left: 1%;
+		height: 305px;
+	}
+	.higher {
+		height: 330px;
 	}
 	#clearOnIndex {
 		clear:both;
@@ -282,9 +259,6 @@ a:hover, a:active {
 	}
 	textarea {
 		border: 1px solid black;
-	}
-	img {
-		max-width: 100%;
 	}
 	#state {
 		float: right;
